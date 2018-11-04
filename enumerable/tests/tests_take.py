@@ -30,7 +30,7 @@ class EnumerableTakeTests(unittest.TestCase):
     def test_take_dict_some_items(self):
         d = {'a': 1, 'b': 2, 'c': 3, 'd': 4}
         e = Enumerable(d)
-        result = list(e.take(3))
+        result = sorted(list(e.take(3)))
         expected_result = ['a', 'b', 'c']
         self.assertListEqual(result, expected_result)
 
@@ -44,14 +44,14 @@ class EnumerableTakeTests(unittest.TestCase):
     def test_take_dict_all_items(self):
         d = {'a': 1, 'b': 2, 'c': 3, 'd': 4}
         e = Enumerable(d)
-        result = list(e.take(4))
+        result = sorted(list(e.take(4)))
         expected_result = ['a', 'b', 'c', 'd']
         self.assertListEqual(result, expected_result)
 
     def test_take_dict_more_items(self):
         d = {'a': 1, 'b': 2, 'c': 3, 'd': 4}
         e = Enumerable(d)
-        result = list(e.take(15))
+        result = sorted(list(e.take(15)))
         expected_result = ['a', 'b', 'c', 'd']
         self.assertListEqual(result, expected_result)
 

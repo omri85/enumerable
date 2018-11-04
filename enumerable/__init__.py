@@ -95,8 +95,7 @@ class Enumerable:
         """Flattens the collection of collection to on collections"""
         def gen():
             for sub_collection in self:
-                for item in selector(sub_collection):
-                    yield item
+                yield from selector(sub_collection)
         return Enumerable(gen())
 
     def where(self, predicate=None):
